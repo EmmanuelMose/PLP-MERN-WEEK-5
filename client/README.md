@@ -1,16 +1,149 @@
-# React + Vite
+# PLP MERN WEEK 5 Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a full-stack MERN (MongoDB, Express, React, Node.js) application that demonstrates real-time communication using **Socket.io** and backend file uploads using **Multer**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Project Structure
 
-## React Compiler
+```
+PLP MERN WEEK 5/
+│
+├── client/       # Frontend (React + Vite)
+│   ├── src/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── server/       # Backend (Node.js + Express + Socket.io)
+    ├── index.js
+    ├── package.json
+    └── uploads/ (optional for Multer file storage)
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ⚙️ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Real-time communication via **Socket.io**
+* File upload handling with **Multer**
+* CORS-enabled Express API
+* Frontend built using **React + Vite**
+* Development with **Nodemon** for live server reloads
+
+---
+
+## 🧩 Backend Setup (Server)
+
+1. Open terminal in the `server` folder:
+
+   ```bash
+   cd server
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+4. By default, the backend runs on:
+
+   ```
+   http://localhost:5000
+   ```
+
+### 📦 Dependencies
+
+* **express** – Web framework for Node.js
+* **cors** – Enables cross-origin resource sharing
+* **socket.io** – Real-time communication library
+* **multer** – Middleware for handling `multipart/form-data` (file uploads)
+* **nodemon** – Automatically restarts the server on file changes (dev dependency)
+
+---
+
+## 💻 Frontend Setup (Client)
+
+1. Open a new terminal in the `client` folder:
+
+   ```bash
+   cd client
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+3. Start the Vite development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+4. Visit the frontend:
+
+   ```
+   http://localhost:5173
+   ```
+
+---
+
+## 🔌 Connecting Frontend and Backend
+
+The client uses **Socket.io Client** to connect to the backend server running at `http://localhost:5000`.
+
+Example `socket.js`:
+
+```js
+import { io } from 'socket.io-client';
+
+export const socket = io('http://localhost:5000', {
+  transports: ['websocket'],
+});
+```
+
+Then import in your React components:
+
+```js
+import { socket } from './socket';
+```
+
+---
+
+## 🧠 Troubleshooting
+
+* If `multer` installation fails, run:
+
+  ```bash
+  pnpm remove multer
+  pnpm add multer@2.0.2
+  ```
+
+* Ensure both client and server are running simultaneously.
+
+* If `vite` or `socket.io-client` errors occur, reinstall node modules:
+
+  ```bash
+  pnpm install
+  ```
+
+---
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+## 👤 Author
+
+**Emmanuel Mose**
+GitHub: [EmmanuelMose](https://github.com/EmmanuelMose)
