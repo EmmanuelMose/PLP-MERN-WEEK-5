@@ -1,0 +1,148 @@
+/* General message container */
+.message {
+  max-width: 80%;
+  margin: 10px;
+  padding: 10px 15px;
+  border-radius: 16px;
+  background: #f1f1f1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Sent messages (right-aligned) */
+.message.me {
+  background: linear-gradient(135deg, #0078ff, #00c6ff);
+  color: white;
+  margin-left: auto;
+  border-bottom-right-radius: 4px;
+}
+
+/* Meta info (sender + timestamp) */
+.message .meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.message .meta strong {
+  color: #0078ff;
+}
+
+.message.me .meta strong {
+  color: #fff;
+}
+
+/* Message body */
+.message .body {
+  word-wrap: break-word;
+}
+
+.message .body p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.message .body a {
+  color: #0078ff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.message .body a:hover {
+  text-decoration: underline;
+}
+
+/* Reactions and read status */
+.message .reactions {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.message .reactions span {
+  background: #e8e8e8;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  cursor: default;
+  transition: background 0.2s ease;
+}
+
+.message .reactions span:hover {
+  background: #dcdcdc;
+}
+
+/* Read by section */
+.message .read-by {
+  margin-top: 5px;
+  font-size: 0.75rem;
+  color: gray;
+}
+
+/* Message controls (reaction buttons + mark read) */
+.message-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.message-controls button {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 1.1rem;
+}
+
+.message-controls button:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.message-controls button:nth-child(1)::before {
+  content: "👍";
+}
+
+.message-controls button:nth-child(2)::before {
+  content: "❤️";
+}
+
+.message-controls button:nth-child(3) {
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 0.8rem;
+  width: auto;
+  background: #0078ff;
+  color: white;
+}
+
+.message-controls button:nth-child(3):hover {
+  background: #005fcc;
+}
+
+/* Animations */
+.message:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .message {
+    max-width: 95%;
+    font-size: 0.9rem;
+  }
+
+  .message-controls button {
+    width: 28px;
+    height: 28px;
+  }
+}

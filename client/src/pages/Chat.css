@@ -1,0 +1,187 @@
+.chat-container {
+  display: flex;
+  height: 100vh;
+  background-color: #12122b;
+  color: #f2f2f2;
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 280px;
+  background: #1e1e36;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #2a2a4d;
+  padding: 16px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.25);
+}
+
+/* User info & Logout */
+.me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2a2a45;
+  padding: 10px 12px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.me strong {
+  font-size: 16px;
+  color: #fff;
+}
+
+.me button {
+  background: #5a56e9;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.me button:hover {
+  background: #6f6afc;
+}
+
+/* --- Online Users --- */
+.online {
+  margin-top: 10px;
+  background: #2a2a45;
+  border-radius: 10px;
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.online h4 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: #ccc;
+  text-align: center;
+}
+
+.online ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.online li {
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: #3a3a5a;
+  transition: background 0.2s ease;
+}
+
+.online li:hover {
+  background: #4b4b73;
+}
+
+/* --- Main Chat Area --- */
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header (room name + typing) */
+.main header {
+  background: #1b1b33;
+  padding: 12px 20px;
+  border-bottom: 1px solid #2a2a4d;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.main header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.typing-indicator {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* --- Messages Area --- */
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #16162d;
+}
+
+.messages button {
+  background: #3c3c64;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  align-self: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.messages button:hover {
+  background: #4e4e80;
+}
+
+/* --- Composer (input + file + send) --- */
+.composer {
+  display: flex;
+  align-items: center;
+  background: #1b1b33;
+  padding: 10px 14px;
+  border-top: 1px solid #2a2a4d;
+  gap: 10px;
+}
+
+.composer input[type="text"],
+.composer input[type="file"] {
+  background: #2a2a45;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  padding: 10px 12px;
+  flex-grow: 1;
+  font-size: 14px;
+  outline: none;
+}
+
+.composer input[type="file"] {
+  max-width: 160px;
+  cursor: pointer;
+}
+
+.composer button {
+  background: #5a56e9;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.1s;
+}
+
+.composer button:hover {
+  background: #6f6afc;
+  transform: translateY(-2px);
+}
+
+.composer button:active {
+  transform: translateY(1px);
+}
